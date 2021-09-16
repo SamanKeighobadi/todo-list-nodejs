@@ -2,6 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const {setStatics} = require('./utils/statcis');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = 3000;
@@ -18,6 +19,7 @@ app.get('/',(req,res) => {
         path:'/'
     })
 })
+app.use('/admin',adminRoutes)
 
 // Statcis 
 setStatics(app)

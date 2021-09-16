@@ -7,4 +7,5 @@ exports.addTodo = (req, res) => {
     if (!err) res.redirect("/");
     else console.log(err);
   });
+
 };
