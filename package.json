@@ -5,9 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev":"nodemon server"
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-v4-rtl": "^4.6.0-3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "font-awesome": "^4.7.0"
+  }
 }
