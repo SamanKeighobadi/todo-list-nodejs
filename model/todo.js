@@ -13,11 +13,27 @@ class Todo {
   }
 
   save(callback) {
-    fs.writeFile(filePath, JSON.stringify(this), (err) => {
-      if (err) callback(err);
-      else return callback([])
+    fs.readFile(filePath, (err, fileContent) => {
+      // if (err) return [];
+
+      const todos = JSON.parse(fileContent);
+      todos.push(this)
+
+      fs.writeFile(filePath, JSON.stringify(todos), (err) => {
+        if (err) callback(err);
+        else return callback([]);
+      });
     });
   }
+
+  static fetchAll(callback)  {
+    fs.readFile(rootDir,(err,fileContent) => {
+      if(err) return []
+      const todos = JSON.parse(fileContent)
+      callback(todos)
+    })
+  }
+
 }
 
 module.exports = Todo;

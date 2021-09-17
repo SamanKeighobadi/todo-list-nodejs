@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title  %> </title>
 </head>
-<body class="">
+<body >
     <div class="form-group">
-        <h1>Todo <small>List</small></h1>
+        <h1 class="text-center my-3">Todo List</h1>
         <form
             action="/admin/add-todo"
             role="form"
@@ -29,9 +29,16 @@
             </div>
         </form>
         <div class="mx-auto w-50 mb-3 alert alert-primary row">
-            <p class="d-inline col">کارهای انجام شده : <span class="badge badge-success badge-pill">0<!-- CompletedTodos --></span></p>
-            <p class="d-inline col">کارهای باقی مانده امروز : <span class="badge badge-warning badge-pill">0<!-- RemainingTodos --></span></p>
+            <p class="d-inline col">done : <span class="badge badge-success badge-pill">0<!-- CompletedTodos --></span></p>
+            <p class="d-inline col">undone : <span class="badge badge-warning badge-pill">0<!-- RemainingTodos --></span></p>
         </div>
+
+        <%= todos  %> 
+
+            <div class="alert alert-warning w-50 mx-auto">
+                <h4 class="alert-heading">There is no Todo</h4>
+            </div>
+
     </div>
 </body>
 </html>
