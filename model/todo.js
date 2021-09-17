@@ -27,7 +27,7 @@ class Todo {
   }
 
   static fetchAll(callback)  {
-    fs.readFile(rootDir,(err,fileContent) => {
+    fs.readFile(filePath,(err,fileContent) => {
       if(err) return []
       const todos = JSON.parse(fileContent)
       callback(todos)

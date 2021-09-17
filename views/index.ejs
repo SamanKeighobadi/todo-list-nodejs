@@ -33,11 +33,24 @@
             <p class="d-inline col">undone : <span class="badge badge-warning badge-pill">0<!-- RemainingTodos --></span></p>
         </div>
 
-        <%= todos  %> 
 
-            <div class="alert alert-warning w-50 mx-auto">
-                <h4 class="alert-heading">There is no Todo</h4>
-            </div>
+           <% if(todos.length > 0) { %> 
+                <ul class="list-unstyled" style="margin:0 auto">
+                    <% for(let todo of todos) { %> 
+                        <li>
+                            <div class="alert alert-primary w-50 ">
+                                <%= todo.text %> 
+                                <a href="#" class="close fa fa-trash pl-2" style="color:red"></a>
+                                <a href="#" class="close fa fa-check-circle  " style="color:green"></a>
+                            </div>
+                        </li>
+                    <% } %> 
+                </ul>
+            <% }else{ %> 
+                <div class="alert alert-warning w-50 mx-auto">
+                    <h4 class="alert-heading">There is no Todo</h4>
+                </div>
+            <% } %> 
 
     </div>
 </body>
