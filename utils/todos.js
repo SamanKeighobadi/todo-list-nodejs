@@ -17,6 +17,20 @@ exports.saveTodos = (todos, callback) => {
   });
 };
 
+exports.getCompletedTodo = (callback) =>{
+  this.getTodos(todos => {
+    const filteredTodo = todos.filter( todo => todo.completed=== true)
+    callback(filteredTodo.length)
+  })
+}
+
+exports.getRemainingTodos = (callback) => {
+  this.getTodos(todos => {
+    const filteredTodo = todos.filter(todo => todo.completed !== true)
+    callback(filteredTodo.length)
+  })
+}
+
 exports.generateRandomId = () => {
   return Math.floor(Math.random() * 1200);
 };
