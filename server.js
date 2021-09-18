@@ -16,7 +16,6 @@ app.set('view engine','ejs')
 // Routes
 app.use(todosRoutes)
 app.use('/admin',adminRoutes)
-
 // Statcis 
 setStatics(app)
 

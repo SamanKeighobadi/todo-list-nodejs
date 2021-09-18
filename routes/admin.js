@@ -1,11 +1,11 @@
 const epxress = require('express');
 
-const route = epxress.Router();
+const router = epxress.Router();
 
 const adminController = require('../controller/admin');
 
-route.post('/add-todo',adminController.addTodo)
+router.post('/add-todo',adminController.addTodo)
 
+router.get('/delete-todo/:id',adminController.deleteTodo)
 
-
-module.exports = route
+module.exports = router

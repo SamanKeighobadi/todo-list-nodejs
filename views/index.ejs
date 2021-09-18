@@ -41,8 +41,8 @@
                         <li>
                             <div class="alert alert-primary  ">
                                 <%= todo.text %> 
-                                <a href="#" class="close fa fa-trash pl-2" style="color:red"></a>
-                                <a href="#" class="close fa fa-check-circle  " style="color:green"></a>
+                                <a href="/admin/delete-todo/<%= todo.id %> " class="close fa fa-trash pl-2" style="color:red"></a>
+                                <a href="/admin/complete-todo/<%= todo.id %> " class="close fa fa-check-circle  " style="color:green"></a>
                             </div>
                         </li>
                     <% } %> 
