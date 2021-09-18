@@ -39,10 +39,15 @@
                 <ul class="list-unstyled w-50" id="todos">
                     <% for(let todo of todos) { %> 
                         <li>
-                            <div class="alert alert-primary  ">
-                                <%= todo.text %> 
-                                <a href="/admin/delete-todo/<%= todo.id %> " class="close fa fa-trash pl-2" style="color:red"></a>
-                                <a href="/admin/complete-todo/<%= todo.id %> " class="close fa fa-check-circle  " style="color:green"></a>
+                            <div class="alert <%= todo.completed ? 'alert-success ': 'alert-primary ' %>  ">
+                                <% if(todo.completed) { %> 
+                                        <del><%= todo.text %></del> 
+                                        <a href="/admin/delete-todo/<%= todo.id %> " class="close fa fa-trash pl-2" style="color:red"></a>
+                                <% }else {%> 
+                                    <%= todo.text %> 
+                                    <a href="/admin/delete-todo/<%= todo.id %> " class="close fa fa-trash pl-2" style="color:red"></a>
+                                    <a href="/admin/complete-todo/<%= todo.id %> " class="close fa fa-check-circle  " style="color:green"></a>
+                                <% } %> 
                             </div>
                         </li>
                     <% } %> 

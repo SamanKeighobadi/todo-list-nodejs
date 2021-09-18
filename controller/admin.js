@@ -9,9 +9,16 @@ exports.addTodo = (req, res) => {
   });
 };
 
-exports.deleteTodo = (req,res) =>{
-  Todo.deleteTodo(req.params.id,err => {
-    if(!err) return res.redirect('/')
-    else console.log(err)
-  })
-}
+exports.deleteTodo = (req, res) => {
+  Todo.deleteTodo(req.params.id, (err) => {
+    if (!err) return res.redirect("/");
+    else console.log(err);
+  });
+};
+
+exports.completeTodo = (req, res) => {
+  Todo.completeTodo(req.params.id, (err) => {
+    if (!err) return res.redirect("/");
+    else console.log(err);
+  });
+};
