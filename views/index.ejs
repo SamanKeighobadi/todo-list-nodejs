@@ -2,8 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title  %> </title>
 </head>
@@ -35,10 +36,10 @@
 
 
            <% if(todos.length > 0) { %> 
-                <ul class="list-unstyled" style="margin:0 auto">
+                <ul class="list-unstyled w-50" id="todos">
                     <% for(let todo of todos) { %> 
                         <li>
-                            <div class="alert alert-primary w-50 ">
+                            <div class="alert alert-primary  ">
                                 <%= todo.text %> 
                                 <a href="#" class="close fa fa-trash pl-2" style="color:red"></a>
                                 <a href="#" class="close fa fa-check-circle  " style="color:green"></a>
